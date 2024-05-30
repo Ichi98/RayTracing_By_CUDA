@@ -5,11 +5,11 @@
 #include <ctime>
 #include <random>
 
-#include "rtweekend.h"
-#include "sphere.h"
-#include "hittable_list.h"
-#include "material.h"
-#include "camera.h"
+#include "../include/rtweekend.h"
+#include "../include/sphere.h"
+#include "../include/hittable_list.h"
+#include "../include/material.h"
+#include "../include/camera.h"
 
 #include <stdio.h>
 
@@ -45,7 +45,7 @@ __global__ void render(unsigned char* buffer, camera* cam, curandState* state)
     int idx = x + y * blockDim.x * gridDim.x;
 
     //设置多重光线采样
-    int samples_per_pixel = 200;
+    int samples_per_pixel = 100;
     color pixel_color(0.0, 0.0, 0.0);
     for (int ss = 0; ss < samples_per_pixel; ++ss)
     {
