@@ -18,7 +18,7 @@
 int W = 1024;
 int H = 1024;
 
-//
+
 __device__ hittable_list* world = nullptr;
 __device__ material* mats[4];
 
